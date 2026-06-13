@@ -1,5 +1,5 @@
 ---
-title: "Running Hermes Agent — An AI That Actually Ships"
+title: "Running Hermes Agent on a GCP VM"
 date: "2026-06-14"
 tags: ["ai", "devops", "meta", "portfolio"]
 excerpt: "I've been using Hermes Agent (by Nous Research) as my daily coding partner. Here's how it's deployed and what it's like."
