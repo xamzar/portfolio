@@ -25,6 +25,10 @@ Some features I use constantly:
 - **Subagent delegation** — It can spawn parallel workers for research or debugging while keeping my conversation clean.
 - **Browser automation** — It can log into portals like CityU's AIMS, navigate through Okta SSO with MFA, and pull information from university systems.
 
+## The Model
+
+Under the hood it uses the DeepSeek API. I run **deepseek-v4-flash** as my daily driver — fast enough for real-time chat, capable enough to write production code. When something needs more reasoning I switch to **deepseek-v4-pro**. The pricing is absurdly cheap: I've spent about 5 RMB (~0.70 USD) exploring everything over the last two days. At that rate I'd have to try pretty hard to run up a meaningful bill.
+
 ## The Workflow
 
 On Telegram, I'll say something like "set up Cloudflare Tunnel for xmzr.dev" and it'll go off, install cloudflared, create the tunnel, configure the ingress, set up systemd, test the connection, and report back when it's live. No progress updates unless it hits a blocker. Just results.
