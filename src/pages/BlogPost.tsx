@@ -46,7 +46,12 @@ export default function BlogPost({ slug, navigate }: BlogPostProps) {
       </a>
       <h1>{data.title}</h1>
       <div style={{ color: 'var(--text-secondary)', fontSize: 12, marginBottom: '2rem' }}>
-        {data.date} · {data.tags?.join(', ')}
+        {data.date} ·{' '}
+        <span className="post-tags">
+          {(data.tags || []).map((t: string) => (
+            <span key={t} className="post-tag">{t}</span>
+          ))}
+        </span>
       </div>
       <div className="blog-content">
         <Markdown remarkPlugins={[remarkGfm]}>{content}</Markdown>

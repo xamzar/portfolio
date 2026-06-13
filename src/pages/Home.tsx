@@ -12,7 +12,7 @@ const posts = Object.entries(blogModules)
   .map(([path, raw]) => {
     const slug = path.split('/').pop()!.replace('.md', '')
     const { data } = parseFrontmatter(raw as string)
-    return { slug, title: data.title || slug, date: data.date || '', excerpt: data.excerpt || '' }
+    return { slug, title: data.title || slug, date: data.date || '', tags: data.tags || [], excerpt: data.excerpt || '' }
   })
   .sort((a, b) => new Date(b.date).getTime() - new Date(a.date).getTime())
   .slice(0, 3)
@@ -75,7 +75,12 @@ export default function Home() {
           posts.map(p => (
             <article key={p.slug} style={{ marginBottom: '1.5rem' }}>
               <div style={{ color: 'var(--text-secondary)', fontSize: 11, marginBottom: '0.25rem' }}>
-                {p.date}
+                {p.date} ·{' '}
+                <span className="post-tags">
+                  {p.tags.map(t => (
+                    <span key={t} className="post-tag">{t}</span>
+                  ))}
+                </span>
               </div>
               <h3 style={{ margin: 0 }}>
                 <a
