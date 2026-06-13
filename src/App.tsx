@@ -42,7 +42,7 @@ export default function App() {
         {page}
         <hr className="separator" />
         <footer>
-          xmzr.dev · {new Date().getFullYear()}
+          © 2026 Rauan Khamza
         </footer>
       </div>
     </>
