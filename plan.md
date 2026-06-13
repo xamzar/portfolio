@@ -19,10 +19,12 @@
 
 ## Phase 1 — Scaffold
 
-- [ ] `npm create vite@latest` with React + TS template
-- [ ] Install deps: react-markdown, remark-gfm, gray-matter
+- [x] `npm create vite@latest` with React + TS template
+- [x] Install deps: react-markdown, remark-gfm, gray-matter
+- [x] GitHub repo created (xamzar/portfolio)
+- [x] Phase 1 commit pushed
 - [ ] Clean out default Vite boilerplate
-- [ ] Verify `npm run dev` works
+- [ ] Build custom layout
 
 ## Phase 2 — Content & Data Model
 
@@ -82,11 +84,13 @@
 
 ## Phase 6 — Server & Domain
 
-- [ ] Install Caddy
-- [ ] Configure Caddyfile to reverse proxy to Vite build or serve static
-- [ ] Build React app (`npm run build`)
-- [ ] Point xmzr.dev A record to VM IP
-- [ ] Verify HTTPS + live site
+- [x] Install Caddy
+- [x] Configure Cloudflare Tunnel (cloudflared)
+- [x] Create tunnel, route DNS (xmzr.dev + www)
+- [x] Systemd service (auto-starts on boot)
+- [x] Verify HTTPS live: **xmzr.dev → 200 OK**
+- [ ] Build React app and serve on port 8080
+- [ ] Final deploy script
 
 ## Phase 7 — Deploy Pipeline
 
