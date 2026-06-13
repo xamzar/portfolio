@@ -5,7 +5,7 @@ tags: ["ai", "devops", "meta", "portfolio"]
 excerpt: "I've been using Hermes Agent (by Nous Research) as my daily coding partner. Here's how it's deployed and what it's like."
 ---
 
-I run an AI agent called [Hermes](https://hermes-agent.nousresearch.com) on the same GCP VM that hosts this portfolio. I found out about it from Prof. Chan Chung and Dr. Zhao Chao — I'm working with them this summer on AI enhancements for DIVE & E-Quiz (CS1302A). Prof. Chan is my supervisor. It's installed as a systemd service, connected to me through Telegram, and it does real work — not just chat.
+I run an AI agent called [Hermes](https://hermes-agent.nousresearch.com) on the same GCP VM that hosts this portfolio. I found out about it from Prof. Chan Chung and Dr. Zhao Chao — I'm working with them this summer on AI enhancements for DIVE & E-Quiz (CS1302A). Prof. Chan is my supervisor. It's installed as a systemd service, connected to me through Telegram, and it does real work — not just chat. I've even used it to log into CityU's AIMS portal and navigate through pages to get things done.
 
 ## The Setup
 
@@ -23,6 +23,7 @@ Some features I use constantly:
 - **Skills** — Reusable workflows it saves after solving a tricky problem. Next time, it loads the skill and avoids the same pitfalls.
 - **Cron jobs** — I can schedule it to do things on a timer. Check something, summarize something, report back.
 - **Subagent delegation** — It can spawn parallel workers for research or debugging while keeping my conversation clean.
+- **Browser automation** — It can log into portals like CityU's AIMS, navigate through Okta SSO with MFA, and pull information from university systems.
 
 ## The Workflow
 
