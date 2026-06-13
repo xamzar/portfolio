@@ -1,0 +1,15 @@
+{
+  "skills": [
+    { "name": "Python", "category": "Language" },
+    { "name": "TypeScript", "category": "Language" },
+    { "name": "React", "category": "Frontend" },
+    { "name": "Java", "category": "Language" },
+    { "name": "C", "category": "Language" },
+    { "name": "SQL", "category": "Database" },
+    { "name": "Git", "category": "Tool" },
+    { "name": "Linux", "category": "Tool" },
+    { "name": "Docker", "category": "Tool" },
+    { "name": "Nextflow", "category": "Tool" },
+    { "name": "R", "category": "Language" }
+  ]
+}

@@ -1,0 +1,11 @@
+{
+  "projects": [
+    {
+      "title": "This Portfolio",
+      "tech": "React · TypeScript · Vite",
+      "desc": "Personal site and blog. Monospace-first Wasp aesthetic, markdown blog engine, served through Cloudflare Tunnel.",
+      "url": "https://xmzr.dev",
+      "status": "live"
+    }
+  ]
+}

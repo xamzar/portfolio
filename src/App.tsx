@@ -1,17 +1,9 @@
 import './App.css'
+import skillsData from './content/skills.json'
+import projectsData from './content/projects.json'
 
-const projects = [
-  {
-    title: 'Coming Soon',
-    tech: 'React · TypeScript',
-    desc: 'Projects will be listed here once completed.',
-  },
-]
-
-const skills = [
-  'Python', 'TypeScript', 'React', 'Java', 'C', 'SQL',
-  'Git', 'Linux', 'Docker', 'Nextflow', 'R',
-]
+const projects = projectsData.projects
+const skills = skillsData.skills
 
 function App() {
   return (
@@ -60,7 +52,7 @@ function App() {
           </p>
           <div className="skills-grid">
             {skills.map(s => (
-              <span key={s} className="skill-tag">{s}</span>
+              <span key={s.name} className="skill-tag">{s.name}</span>
             ))}
           </div>
         </section>
