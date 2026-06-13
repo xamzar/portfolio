@@ -5,5 +5,5 @@ tags: ["meta", "portfolio"]
 excerpt: "First post."
 ---
 
-CS student at City University of Hong Kong. Working on AI-integrated education research and building things with code.
+My first post.
 
