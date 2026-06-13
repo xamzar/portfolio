@@ -44,11 +44,14 @@
 
 ## Phase 4 — Portfolio Pages
 
-- [ ] **Hero** — name, tagline, blurb, social links
-- [ ] **About** — bio, skills grid (from skills.json)
-- [ ] **Projects** — project cards with links (from projects.json)
-- [ ] **Contact** — contact form or links
-- [ ] Navigation between sections + blog
+- [x] **Hero** — name, tagline, blurb, social links
+- [x] **About** — bio, skills grid
+- [x] **Projects** — section (placeholder)
+- [x] **Contact** — email, location
+- [x] Navigation bar with smooth scroll
+- [x] MVP live at xmzr.dev
+- [ ] Project cards with real data
+- [ ] Contact form (optional)
 
 ## Theme — "Wasp" Aesthetic
 

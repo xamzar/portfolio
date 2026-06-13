@@ -18,7 +18,11 @@ function App() {
     <>
       <nav>
         <div className="container">
-          <span style={{ color: 'var(--accent-primary)', fontSize: 13 }}>
+          <span className="logo">
+            <svg width="18" height="18" viewBox="0 0 32 32" fill="none" style={{ verticalAlign: 'middle', marginRight: 6 }}>
+              <rect width="32" height="32" rx="4" fill="#1a1a1a"/>
+              <path d="M8 8l16 16M24 8L8 24" stroke="#d4a017" stroke-width="3.5" stroke-linecap="square"/>
+            </svg>
             xmzr
           </span>
           <ul className="nav-links">
@@ -40,8 +44,8 @@ function App() {
           </p>
           <div className="links">
             <a href="https://github.com/xamzar" target="_blank">github</a>
-            <a href="https://linkedin.com/in/xamzar" target="_blank">linkedin</a>
-            <a href="mailto:xamzara1@gmail.com">email</a>
+            <a href="https://linkedin.com/in/xmzr" target="_blank">linkedin</a>
+            <a href="mailto:rauan.khamza@gmail.com">email</a>
           </div>
         </section>
 
@@ -90,7 +94,7 @@ function App() {
         <section id="contact">
           <h2 className="section-title">// contact</h2>
           <p style={{ color: 'var(--text-secondary)', fontSize: 13, marginBottom: '0.5rem' }}>
-            xamzara1@gmail.com
+            rauan.khamza@gmail.com
           </p>
           <p style={{ color: 'var(--text-secondary)', fontSize: 12 }}>
             Based in Hong Kong (UTC+8) · available for collaboration & research work

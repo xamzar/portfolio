@@ -76,6 +76,13 @@ nav .container {
   font-size: 13px;
 }
 
+.logo {
+  color: var(--accent-primary);
+  font-size: 13px;
+  display: flex;
+  align-items: center;
+}
+
 .nav-links {
   display: flex;
   gap: 1.5rem;
