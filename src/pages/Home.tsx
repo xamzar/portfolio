@@ -1,9 +1,21 @@
 import '../App.css'
+import { parseFrontmatter } from '../lib/frontmatter'
 import skillsData from '../content/skills.json'
 import projectsData from '../content/projects.json'
 
 const projects = projectsData.projects
 const skills = skillsData.skills
+
+const blogModules = import.meta.glob('../content/blog/*.md', { eager: true, query: '?raw', import: 'default' }) as Record<string, string>
+
+const posts = Object.entries(blogModules)
+  .map(([path, raw]) => {
+    const slug = path.split('/').pop()!.replace('.md', '')
+    const { data } = parseFrontmatter(raw as string)
+    return { slug, title: data.title || slug, date: data.date || '', excerpt: data.excerpt || '' }
+  })
+  .sort((a, b) => new Date(b.date).getTime() - new Date(a.date).getTime())
+  .slice(0, 3)
 
 export default function Home() {
   return (
@@ -55,11 +67,42 @@ export default function Home() {
 
       <section id="blog">
         <h2 className="section-title">// blog</h2>
-        <div className="blog-excerpt">
+        {posts.length === 0 ? (
           <p style={{ color: 'var(--text-secondary)', fontSize: 13 }}>
             No posts yet — coming soon.
           </p>
-        </div>
+        ) : (
+          posts.map(p => (
+            <article key={p.slug} style={{ marginBottom: '1.5rem' }}>
+              <div style={{ color: 'var(--text-secondary)', fontSize: 11, marginBottom: '0.25rem' }}>
+                {p.date}
+              </div>
+              <h3 style={{ margin: 0 }}>
+                <a
+                  href={`#/blog/${p.slug}`}
+                  onClick={(e) => { e.preventDefault(); window.location.hash = `/blog/${p.slug}` }}
+                  style={{ color: 'var(--accent-primary)', textDecoration: 'none' }}
+                >
+                  {p.title}
+                </a>
+              </h3>
+              {p.excerpt && (
+                <p style={{ color: 'var(--text-secondary)', fontSize: 12, marginTop: '0.25rem' }}>
+                  {p.excerpt}
+                </p>
+              )}
+            </article>
+          ))
+        )}
+        {posts.length > 0 && (
+          <a
+            href="#/blog"
+            onClick={(e) => { e.preventDefault(); window.location.hash = '/blog' }}
+            style={{ color: 'var(--accent-secondary)', fontSize: 12 }}
+          >
+            View all posts →
+          </a>
+        )}
       </section>
 
       <hr className="separator" />
