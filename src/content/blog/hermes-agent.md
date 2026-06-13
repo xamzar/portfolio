@@ -35,8 +35,4 @@ On Telegram, I'll say something like "set up Cloudflare Tunnel for xmzr.dev" and
 
 For serious work I SSH in and use the CLI directly — it's the same agent but with full terminal access and no message length limits.
 
-## The Weird Part
-
-Sometimes I forget I'm talking to software. Not because it's particularly human-like, but because it's so *useful* — it handles the boring parts of building things so I can focus on decisions. It's like pair programming with someone who doesn't get tired, doesn't complain about my commit messages, and remembers every config file I've ever touched.
-
 The [Hermes docs](https://hermes-agent.nousresearch.com/docs) are solid, and it's open-source. If you run a Linux box and write code, it's worth a try.
