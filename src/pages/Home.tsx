@@ -48,6 +48,7 @@ export default function Home() {
             <div>
               <div className="edu-school">{t('edu.cityu.school')} · 🐯</div>
               <div className="edu-degree">{t('edu.cityu.degree')}</div>
+              <div className="edu-coursework">{t('edu.cityu.coursework')}</div>
             </div>
             <div className="edu-meta">
               <span>{t('edu.cityu.location')}</span>

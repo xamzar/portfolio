@@ -109,6 +109,13 @@
   line-height: 1.5;
 }
 
+.edu-coursework {
+  font-size: 11px;
+  color: var(--accent-primary);
+  margin-top: 0.3rem;
+  opacity: 0.8;
+}
+
 .edu-meta {
   text-align: right;
   flex-shrink: 0;
