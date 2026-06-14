@@ -30,6 +30,8 @@ export default function Home() {
         <div className="links">
           <a href="https://github.com/xamzar" target="_blank">github</a>
           <a href="https://linkedin.com/in/xmzr" target="_blank">linkedin</a>
+          <a href="https://instagram.com/xmzr.dev" target="_blank">instagram</a>
+          <a href="https://t.me/xmzrdev" target="_blank">telegram</a>
           <a href="mailto:rauan.khamza@gmail.com">email</a>
         </div>
       </section>
@@ -47,6 +49,38 @@ export default function Home() {
           {skills.map(s => (
             <span key={s.name} className="skill-tag">{s.name}</span>
           ))}
+        </div>
+      </section>
+
+      <hr className="separator" />
+
+      <section id="education">
+        <h2 className="section-title">// education</h2>
+
+        <div className="edu-entry">
+          <div className="edu-header">
+            <div>
+              <div className="edu-school">City University of Hong Kong</div>
+              <div className="edu-degree">BSc Computer Science · CityUHK Tiger Scholar · Full-tuition Merit Scholarship (210k HKD/yr)</div>
+            </div>
+            <div className="edu-meta">
+              <span>Hong Kong</span>
+              <span>2025–Present</span>
+            </div>
+          </div>
+        </div>
+
+        <div className="edu-entry">
+          <div className="edu-header">
+            <div>
+              <div className="edu-school">Nazarbayev University</div>
+              <div className="edu-degree">CS coursework — Calc I–II, Discrete Math, C/C++, Data Structures</div>
+            </div>
+            <div className="edu-meta">
+              <span>Kazakhstan</span>
+              <span>2024–2025</span>
+            </div>
+          </div>
         </div>
       </section>
 
@@ -77,7 +111,7 @@ export default function Home() {
               <div style={{ color: 'var(--text-secondary)', fontSize: 11, marginBottom: '0.25rem' }}>
                 {p.date} ·{' '}
                 <span className="post-tags">
-                  {p.tags.map(t => (
+                  {p.tags.map((t: string) => (
                     <span key={t} className="post-tag">{t}</span>
                   ))}
                 </span>

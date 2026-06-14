@@ -22,3 +22,7 @@ dist-ssr
 *.njsproj
 *.sln
 *.sw?
+
+# Hermes workspace artifacts
+plan.md
+.hermes/
