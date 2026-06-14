@@ -121,20 +121,20 @@ nav .container {
   max-width: 560px;
 }
 
-.hero .links {
+/* Contact links */
+.contact-links {
   display: flex;
   gap: 1.5rem;
-  margin-top: 1.5rem;
 }
 
-.hero .links a {
+.contact-links a {
   display: flex;
   align-items: center;
   color: var(--text-secondary);
   transition: color 0.2s;
 }
 
-.hero .links a:hover {
+.contact-links a:hover {
   color: var(--accent-primary);
 }
 
