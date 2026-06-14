@@ -4,6 +4,7 @@ import Nav from './components/Nav'
 import Home from './pages/Home'
 import Blog from './pages/Blog'
 import BlogPost from './pages/BlogPost'
+import Project from './pages/Project'
 import Credits from './pages/Credits'
 
 function getRoute() {
@@ -37,6 +38,9 @@ export default function App() {
   } else if (route.startsWith('/blog/')) {
     const slug = route.replace('/blog/', '')
     page = <BlogPost slug={slug} navigate={navigate} />
+  } else if (route.startsWith('/projects/')) {
+    const slug = route.replace('/projects/', '')
+    page = <Project slug={slug} navigate={navigate} />
   } else if (route === '/blog') {
     page = <Blog />
   } else if (route === '/credits') {

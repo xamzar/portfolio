@@ -6,6 +6,7 @@ export type ProjectMeta = {
   tech: string
   desc: string
   url?: string
+  repo?: string
   status?: string
 }
 
@@ -43,8 +44,19 @@ function parseMeta(raw: string): Omit<ProjectMeta, 'slug'> {
     tech: data.tech || '',
     desc: content.trim(),
     url: data.url,
+    repo: data.repo,
     status: data.status,
   }
+}
+
+function resolveEntry(slug: string, lang: string): ProjectEntry | undefined {
+  const entries = projectsBySlug[slug]
+  if (!entries) return undefined
+  return (
+    entries.find(e => e.lang === lang) ||
+    entries.find(e => e.lang === 'en') ||
+    entries[0]
+  )
 }
 
 /** All projects for a given language, sorted alphabetically by slug. Falls back to English. */
@@ -52,12 +64,30 @@ export function allProjects(lang: string = 'en'): ProjectMeta[] {
   return Object.keys(projectsBySlug)
     .sort()
     .map(slug => {
-      const entries = projectsBySlug[slug]
-      const entry =
-        entries.find(e => e.lang === lang) ||
-        entries.find(e => e.lang === 'en') ||
-        entries[0]
+      const entry = resolveEntry(slug, lang)!
       const meta = parseMeta(entry.raw)
       return { slug: entry.slug, ...meta }
     })
+}
+
+/** Get a single project in the given language (falls back to English). Returns full markdown content. */
+export function getProject(
+  slug: string,
+  lang: string = 'en',
+): { meta: ProjectMeta; content: string } | null {
+  const entry = resolveEntry(slug, lang)
+  if (!entry) return null
+  const { data, content } = parseFrontmatter(entry.raw)
+  return {
+    meta: {
+      slug: entry.slug,
+      title: data.title || '',
+      tech: data.tech || '',
+      desc: content.trim(),
+      url: data.url,
+      repo: data.repo,
+      status: data.status,
+    },
+    content,
+  }
 }
