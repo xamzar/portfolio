@@ -35,11 +35,19 @@ nav {
 
 nav .container {
   display: flex;
-  justify-content: space-between;
+  justify-content: flex-start;
   align-items: center;
+  flex-wrap: wrap;
   padding-top: 0.75rem;
   padding-bottom: 0.75rem;
   font-size: 13px;
+}
+
+.nav-links {
+  display: flex;
+  gap: 1.5rem;
+  list-style: none;
+  margin-left: auto;
 }
 
 .logo {
@@ -47,12 +55,6 @@ nav .container {
   font-size: 13px;
   display: flex;
   align-items: center;
-}
-
-.nav-links {
-  display: flex;
-  gap: 1.5rem;
-  list-style: none;
 }
 
 .nav-links a {
@@ -66,8 +68,16 @@ nav .container {
 }
 
 @media (max-width: 600px) {
-  .nav-links { gap: 0.75rem; font-size: 11px; }
-  .lang-selector { margin-left: 0.5rem; font-size: 11px; }
+  .nav-links {
+    width: 100%;
+    justify-content: center;
+    order: 1;
+    margin-top: 0.5rem;
+    margin-left: 0;
+    gap: 1rem;
+    font-size: 11px;
+  }
+  .lang-selector { margin-left: auto; font-size: 11px; }
 }
 
 /* Section spacing */
@@ -102,5 +112,4 @@ footer {
 @media (max-width: 600px) {
   .hero h1 { font-size: 1.5rem; }
   .hero { padding: 4rem 0 2rem; }
-  .nav-links { gap: 1rem; font-size: 12px; }
 }

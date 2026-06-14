@@ -20,24 +20,22 @@ export default function Nav({ route, navigate }: NavProps) {
           </svg>
           xmzr
         </a>
-        <div style={{ display: 'flex', alignItems: 'center' }}>
-          <ul className="nav-links">
-            {isHome ? (
-              <>
-                <li><a href="#about">{t('nav.about')}</a></li>
-                <li><a href="#projects">{t('nav.projects')}</a></li>
-                <li><a href="#blog" onClick={(e) => { e.preventDefault(); navigate('/blog') }}>{t('nav.blog')}</a></li>
-                <li><a href="#contact">{t('nav.contact')}</a></li>
-              </>
-            ) : (
-              <>
-                <li><a href="#" onClick={(e) => { e.preventDefault(); navigate('/') }}>{t('nav.home')}</a></li>
-                <li><a href="#blog" onClick={(e) => { e.preventDefault(); navigate('/blog') }}>{t('nav.blog')}</a></li>
-              </>
-            )}
-          </ul>
-          <LangSelector />
-        </div>
+        <ul className="nav-links">
+          {isHome ? (
+            <>
+              <li><a href="#about">{t('nav.about')}</a></li>
+              <li><a href="#projects">{t('nav.projects')}</a></li>
+              <li><a href="#blog" onClick={(e) => { e.preventDefault(); navigate('/blog') }}>{t('nav.blog')}</a></li>
+              <li><a href="#contact">{t('nav.contact')}</a></li>
+            </>
+          ) : (
+            <>
+              <li><a href="#" onClick={(e) => { e.preventDefault(); navigate('/') }}>{t('nav.home')}</a></li>
+              <li><a href="#blog" onClick={(e) => { e.preventDefault(); navigate('/blog') }}>{t('nav.blog')}</a></li>
+            </>
+          )}
+        </ul>
+        <LangSelector />
       </div>
     </nav>
   )
