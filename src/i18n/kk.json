@@ -48,15 +48,6 @@
     "notFoundBody": "Пост табылмады.",
     "back": "← Блогқа оралу"
   },
-  "projects": [
-    {
-      "title": "Бұл Портфолио",
-      "tech": "React · TypeScript · Vite",
-      "desc": "Жеке сайт және блог. Monospace басым Wasp эстетикасы, markdown блог қозғалтқышы, Cloudflare Tunnel арқылы қызмет көрсетіледі.",
-      "url": "https://xmzr.dev",
-      "status": "live"
-    }
-  ],
   "contact": {
     "availability": "Гонконг (UTC+8) · коллаб және зерттеу үшін ашық"
   },

@@ -48,15 +48,6 @@
     "notFoundBody": "文章未找到。",
     "back": "← 返回博客"
   },
-  "projects": [
-    {
-      "title": "本作品集",
-      "tech": "React · TypeScript · Vite",
-      "desc": "个人网站与博客。等宽Wasp美学，Markdown博客引擎，通过Cloudflare Tunnel提供服务。",
-      "url": "https://xmzr.dev",
-      "status": "live"
-    }
-  ],
   "contact": {
     "availability": "香港 (UTC+8) · 欢迎合作与研究"
   },

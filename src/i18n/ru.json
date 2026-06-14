@@ -48,15 +48,6 @@
     "notFoundBody": "Пост не найден.",
     "back": "← Назад к блогу"
   },
-  "projects": [
-    {
-      "title": "Это Портфолио",
-      "tech": "React · TypeScript · Vite",
-      "desc": "Личный сайт и блог. Моноширинная эстетика Wasp, markdown-движок для блога, работает через Cloudflare Tunnel.",
-      "url": "https://xmzr.dev",
-      "status": "live"
-    }
-  ],
   "contact": {
     "availability": "Гонконг (UTC+8) · открыт для коллабораций и исследований"
   },

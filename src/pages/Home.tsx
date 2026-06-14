@@ -1,20 +1,13 @@
 import { useLanguage } from '../i18n/context'
 import skillsData from '../content/skills.json'
 import BlogPreview from '../sections/BlogPreview'
+import { allProjects } from '../lib/projects'
 
 const skills = skillsData.skills
 
-type ProjectItem = {
-  title: string
-  tech: string
-  desc: string
-  url?: string
-  status?: string
-}
-
 export default function Home() {
-  const { t, tData } = useLanguage()
-  const projects = tData<ProjectItem[]>('projects') || []
+  const { t, language } = useLanguage()
+  const projects = allProjects(language)
 
   return (
     <>

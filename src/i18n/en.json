@@ -48,15 +48,6 @@
     "notFoundBody": "Post not found.",
     "back": "← Back to blog"
   },
-  "projects": [
-    {
-      "title": "This Portfolio",
-      "tech": "React · TypeScript · Vite",
-      "desc": "Personal site and blog. Monospace-first Wasp aesthetic, markdown blog engine, served through Cloudflare Tunnel.",
-      "url": "https://xmzr.dev",
-      "status": "live"
-    }
-  ],
   "contact": {
     "availability": "HK (UTC+8) · open for collab & research"
   },
