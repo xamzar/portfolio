@@ -6,9 +6,8 @@ interface NavProps {
   navigate: (path: string) => void
 }
 
-export default function Nav({ route, navigate }: NavProps) {
+export default function Nav({ navigate }: NavProps) {
   const { t } = useLanguage()
-  const isHome = route === '/'
 
   return (
     <nav>
@@ -21,19 +20,8 @@ export default function Nav({ route, navigate }: NavProps) {
           xmzr
         </a>
         <ul className="nav-links">
-          {isHome ? (
-            <>
-              <li><a href="#about">{t('nav.about')}</a></li>
-              <li><a href="#projects">{t('nav.projects')}</a></li>
-              <li><a href="#blog" onClick={(e) => { e.preventDefault(); navigate('/blog') }}>{t('nav.blog')}</a></li>
-              <li><a href="#contact">{t('nav.contact')}</a></li>
-            </>
-          ) : (
-            <>
-              <li><a href="#" onClick={(e) => { e.preventDefault(); navigate('/') }}>{t('nav.home')}</a></li>
-              <li><a href="#blog" onClick={(e) => { e.preventDefault(); navigate('/blog') }}>{t('nav.blog')}</a></li>
-            </>
-          )}
+          <li><a href="#/projects">{t('nav.projects')}</a></li>
+          <li><a href="#/blog">{t('nav.blog')}</a></li>
         </ul>
         <LangSelector />
       </div>
