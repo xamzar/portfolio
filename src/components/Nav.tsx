@@ -1,4 +1,5 @@
 import { useLanguage } from '../i18n/context'
+import LangSelector from './LangSelector'
 
 interface NavProps {
   route: string
@@ -6,7 +7,7 @@ interface NavProps {
 }
 
 export default function Nav({ route, navigate }: NavProps) {
-  const { t, language, setLanguage, languages } = useLanguage()
+  const { t } = useLanguage()
   const isHome = route === '/'
 
   return (
@@ -35,18 +36,7 @@ export default function Nav({ route, navigate }: NavProps) {
               </>
             )}
           </ul>
-          <span className="lang-select-wrap">
-            <select
-              value={language}
-              onChange={e => setLanguage(e.target.value)}
-            >
-              {languages.map(lang => (
-                <option key={lang.code} value={lang.code}>
-                  {lang.nativeName}
-                </option>
-              ))}
-            </select>
-          </span>
+          <LangSelector />
         </div>
       </div>
     </nav>
