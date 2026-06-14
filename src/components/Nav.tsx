@@ -35,17 +35,18 @@ export default function Nav({ route, navigate }: NavProps) {
               </>
             )}
           </ul>
-          <select
-            className="lang-select"
-            value={language}
-            onChange={e => setLanguage(e.target.value)}
-          >
-            {languages.map(lang => (
-              <option key={lang.code} value={lang.code}>
-                {lang.nativeName}
-              </option>
-            ))}
-          </select>
+          <span className="lang-select-wrap">
+            <select
+              value={language}
+              onChange={e => setLanguage(e.target.value)}
+            >
+              {languages.map(lang => (
+                <option key={lang.code} value={lang.code}>
+                  {lang.nativeName}
+                </option>
+              ))}
+            </select>
+          </span>
         </div>
       </div>
     </nav>

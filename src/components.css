@@ -274,33 +274,50 @@
   margin-top: 3rem;
 }
 
-/* Language select */
-.lang-select {
-  background: transparent;
-  border: 1px solid #444;
-  color: var(--text-secondary);
-  font: inherit;
-  font-size: 10px;
-  padding: 1px 4px;
+/* Language select — terminal bracket style: [EN ▾] */
+.lang-select-wrap {
+  display: inline-flex;
+  align-items: center;
   margin-left: 1rem;
+  color: var(--text-secondary);
+  font-family: var(--font-mono);
+  font-size: 12px;
+  transition: color 0.2s;
   cursor: pointer;
-  transition: border-color 0.2s, color 0.2s;
-  appearance: none;
-  -webkit-appearance: none;
-  -moz-appearance: none;
-  min-width: 32px;
-  text-align: center;
 }
 
-.lang-select:hover {
-  border-color: var(--accent-primary);
+.lang-select-wrap::before {
+  content: '[';
+}
+
+.lang-select-wrap::after {
+  content: '▾]';
+}
+
+.lang-select-wrap:hover {
   color: var(--accent-primary);
 }
 
-.lang-select option {
+.lang-select-wrap select {
+  appearance: none;
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  background: transparent;
+  border: none;
+  color: inherit;
+  font: inherit;
+  font-size: inherit;
+  padding: 0 1px;
+  cursor: pointer;
+  outline: none;
+  text-align: center;
+  min-width: 0;
+}
+
+.lang-select-wrap select option {
   background: var(--bg-primary);
   color: var(--text-primary);
-  font-size: 11px;
+  font-size: 13px;
 }
 
 /* Blog listing spacing */
