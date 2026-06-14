@@ -1,0 +1,72 @@
+{
+  "$meta": {
+    "name": "English",
+    "nativeName": "EN"
+  },
+  "nav": {
+    "about": "/about",
+    "projects": "/projects",
+    "blog": "/blog",
+    "contact": "/contact",
+    "home": "/home"
+  },
+  "hero": {
+    "name": "Rauan Khamza",
+    "tagline": "CS @ CityU HK · building things",
+    "bio": "Second-year computer science student. Working on AI-integrated education research and web stuff."
+  },
+  "section": {
+    "about": "// about",
+    "education": "// education",
+    "projects": "// projects",
+    "blog": "// blog",
+    "contact": "// contact"
+  },
+  "about": {
+    "body": "From Kazakhstan, based in Hong Kong. Interested in AI, software engineering, and building tools that make learning programming more accessible."
+  },
+  "edu": {
+    "cityu": {
+      "school": "City University of Hong Kong",
+      "degree": "BSc Computer Science · CityUHK Tiger Scholar · Full-tuition Merit Scholarship (210k HKD/yr)",
+      "location": "Hong Kong",
+      "dates": "2025–Present"
+    },
+    "nu": {
+      "school": "Nazarbayev University",
+      "degree": "CS coursework — Calc I–II, Discrete Math, C/C++, Data Structures",
+      "location": "Kazakhstan",
+      "dates": "2024–2025"
+    }
+  },
+  "blog": {
+    "searchPlaceholder": "search posts...",
+    "noMatches": "No posts match your filter.",
+    "viewAll": "View all posts →",
+    "empty": "No posts yet — coming soon.",
+    "notFound": "// not found",
+    "notFoundBody": "Post not found.",
+    "back": "← Back to blog"
+  },
+  "projects": [
+    {
+      "title": "This Portfolio",
+      "tech": "React · TypeScript · Vite",
+      "desc": "Personal site and blog. Monospace-first Wasp aesthetic, markdown blog engine, served through Cloudflare Tunnel.",
+      "url": "https://xmzr.dev",
+      "status": "live"
+    }
+  ],
+  "contact": {
+    "availability": "HK (UTC+8) · open for collab & research"
+  },
+  "credits": {
+    "title": "// credits",
+    "inspirationHeading": "Theme inspiration",
+    "inspirationBody": "The look and feel of this site is inspired by Wasp Obsidian Theme by @santiyounger — a dark, minimal Obsidian theme with warm amber accents.",
+    "footer": "Site built with React + Vite + TypeScript. Modular CSS via custom properties."
+  },
+  "footer": {
+    "credits": "credits"
+  }
+}

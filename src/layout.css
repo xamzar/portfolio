@@ -1,0 +1,105 @@
+*, *::before, *::after {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+.container {
+  max-width: var(--max-width);
+  margin: 0 auto;
+  padding: 0 1.5rem;
+}
+
+/* Gradient separator */
+.separator {
+  height: 1px;
+  background: var(--separator);
+  margin: var(--spacing) 0;
+  border: none;
+  width: 100%;
+}
+
+/* Navigation */
+nav {
+  position: sticky;
+  top: 0;
+  background: rgba(26, 26, 26, 0.95);
+  backdrop-filter: blur(8px);
+  border-bottom: 1px solid #333;
+  z-index: 100;
+}
+
+nav .container {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding-top: 0.75rem;
+  padding-bottom: 0.75rem;
+  font-size: 13px;
+}
+
+.logo {
+  color: var(--accent-primary);
+  font-size: 13px;
+  display: flex;
+  align-items: center;
+}
+
+.nav-links {
+  display: flex;
+  gap: 1.5rem;
+  list-style: none;
+}
+
+.nav-links a {
+  color: var(--text-secondary);
+  transition: color 0.2s;
+  white-space: nowrap;
+}
+
+.nav-links a:hover {
+  color: var(--accent-primary);
+}
+
+@media (max-width: 600px) {
+  .nav-links { gap: 0.75rem; font-size: 11px; }
+}
+
+/* Section spacing */
+section {
+  padding: 2rem 0;
+}
+
+/* Footer */
+footer {
+  padding: 2rem 0;
+  text-align: center;
+  color: var(--text-secondary);
+  font-size: 12px;
+}
+
+.footer-link {
+  color: var(--text-secondary);
+  text-decoration: none;
+  transition: color 0.2s;
+}
+
+.footer-link:hover {
+  color: var(--accent-primary);
+}
+
+.footer-sep {
+  color: #444;
+  margin: 0 0.5rem;
+}
+
+/* Responsive */
+@media (max-width: 600px) {
+  .hero h1 { font-size: 1.5rem; }
+  .hero { padding: 4rem 0 2rem; }
+  .nav-links { gap: 1rem; font-size: 12px; }
+}

@@ -1,0 +1,72 @@
+{
+  "$meta": {
+    "name": "Chinese",
+    "nativeName": "中文"
+  },
+  "nav": {
+    "about": "/关于",
+    "projects": "/项目",
+    "blog": "/博客",
+    "contact": "/联系",
+    "home": "/首页"
+  },
+  "hero": {
+    "name": "Rauan Khamza",
+    "tagline": "CS @ CityU HK · 做些东西",
+    "bio": "计算机科学大二学生。从事AI融合教育研究和Web开发。"
+  },
+  "section": {
+    "about": "// 关于",
+    "education": "// 教育",
+    "projects": "// 项目",
+    "blog": "// 博客",
+    "contact": "// 联系"
+  },
+  "about": {
+    "body": "来自哈萨克斯坦，现居香港。对人工智能、软件工程以及构建让编程学习更易上手的工具感兴趣。"
+  },
+  "edu": {
+    "cityu": {
+      "school": "香港城市大學",
+      "degree": "计算机科学学士 · CityUHK Tiger Scholar · 全额奖学金 (21万港币/年)",
+      "location": "香港",
+      "dates": "2025–至今"
+    },
+    "nu": {
+      "school": "纳扎尔巴耶夫大学",
+      "degree": "CS课程 — 微积分I–II、离散数学、C/C++、数据结构",
+      "location": "哈萨克斯坦",
+      "dates": "2024–2025"
+    }
+  },
+  "blog": {
+    "searchPlaceholder": "搜索文章...",
+    "noMatches": "没有匹配的文章。",
+    "viewAll": "查看全部文章 →",
+    "empty": "暂无文章。",
+    "notFound": "// 未找到",
+    "notFoundBody": "文章未找到。",
+    "back": "← 返回博客"
+  },
+  "projects": [
+    {
+      "title": "本作品集",
+      "tech": "React · TypeScript · Vite",
+      "desc": "个人网站与博客。等宽Wasp美学，Markdown博客引擎，通过Cloudflare Tunnel提供服务。",
+      "url": "https://xmzr.dev",
+      "status": "live"
+    }
+  ],
+  "contact": {
+    "availability": "香港 (UTC+8) · 欢迎合作与研究"
+  },
+  "credits": {
+    "title": "// 致谢",
+    "inspirationHeading": "主题灵感",
+    "inspirationBody": "本网站外观灵感来源于 @santiyounger 的 Wasp Obsidian Theme — 一款带有温暖琥珀色点缀的深色极简Obsidian主题。",
+    "footer": "网站使用 React + Vite + TypeScript 构建。通过自定义CSS属性实现模块化样式。"
+  },
+  "footer": {
+    "credits": "致谢"
+  }
+}

@@ -1,0 +1,14 @@
+@import url('https://fonts.googleapis.com/css2?family=JetBrains+Mono:ital,wght@0,400;0,500;0,700;1,400&display=swap');
+
+:root {
+  --bg-primary: #1a1a1a;
+  --bg-secondary: #2a2a2a;
+  --text-primary: #f0ece4;
+  --text-secondary: #a09888;
+  --accent-primary: #d4a017;
+  --accent-secondary: #cc5500;
+  --separator: linear-gradient(90deg, #d4a017 0%, #d4a017 20%, transparent 100%);
+  --font-mono: 'JetBrains Mono', 'Fira Code', 'Cascadia Code', monospace;
+  --max-width: 720px;
+  --spacing: 2rem;
+}

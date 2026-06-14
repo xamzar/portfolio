@@ -1,9 +1,12 @@
+import { useLanguage } from '../i18n/context'
+
 interface NavProps {
   route: string
   navigate: (path: string) => void
 }
 
 export default function Nav({ route, navigate }: NavProps) {
+  const { t, language, setLanguage, languages } = useLanguage()
   const isHome = route === '/'
 
   return (
@@ -16,21 +19,34 @@ export default function Nav({ route, navigate }: NavProps) {
           </svg>
           xmzr
         </a>
-        <ul className="nav-links">
-          {isHome ? (
-            <>
-              <li><a href="#about">/about</a></li>
-              <li><a href="#projects">/projects</a></li>
-              <li><a href="#blog" onClick={(e) => { e.preventDefault(); navigate('/blog') }}>/blog</a></li>
-              <li><a href="#contact">/contact</a></li>
-            </>
-          ) : (
-            <>
-              <li><a href="#" onClick={(e) => { e.preventDefault(); navigate('/') }}>/home</a></li>
-              <li><a href="#blog" onClick={(e) => { e.preventDefault(); navigate('/blog') }}>/blog</a></li>
-            </>
-          )}
-        </ul>
+        <div style={{ display: 'flex', alignItems: 'center' }}>
+          <ul className="nav-links">
+            {isHome ? (
+              <>
+                <li><a href="#about">{t('nav.about')}</a></li>
+                <li><a href="#projects">{t('nav.projects')}</a></li>
+                <li><a href="#blog" onClick={(e) => { e.preventDefault(); navigate('/blog') }}>{t('nav.blog')}</a></li>
+                <li><a href="#contact">{t('nav.contact')}</a></li>
+              </>
+            ) : (
+              <>
+                <li><a href="#" onClick={(e) => { e.preventDefault(); navigate('/') }}>{t('nav.home')}</a></li>
+                <li><a href="#blog" onClick={(e) => { e.preventDefault(); navigate('/blog') }}>{t('nav.blog')}</a></li>
+              </>
+            )}
+          </ul>
+          <select
+            className="lang-select"
+            value={language}
+            onChange={e => setLanguage(e.target.value)}
+          >
+            {languages.map(lang => (
+              <option key={lang.code} value={lang.code}>
+                {lang.nativeName}
+              </option>
+            ))}
+          </select>
+        </div>
       </div>
     </nav>
   )

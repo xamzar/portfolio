@@ -1,9 +1,10 @@
 import { useState, useEffect } from 'react'
+import { useLanguage } from './i18n/context'
 import Nav from './components/Nav'
 import Home from './pages/Home'
 import Blog from './pages/Blog'
 import BlogPost from './pages/BlogPost'
-import './App.css'
+import Credits from './pages/Credits'
 
 function getRoute() {
   const hash = window.location.hash.replace('#', '') || '/'
@@ -11,10 +12,17 @@ function getRoute() {
 }
 
 export default function App() {
+  const { t } = useLanguage()
   const [route, setRoute] = useState(getRoute)
 
   useEffect(() => {
-    const onHashChange = () => setRoute(getRoute())
+    const onHashChange = () => {
+      const newRoute = getRoute()
+      if (newRoute.startsWith('/')) {
+        requestAnimationFrame(() => window.scrollTo(0, 0))
+      }
+      setRoute(newRoute)
+    }
     window.addEventListener('hashchange', onHashChange)
     return () => window.removeEventListener('hashchange', onHashChange)
   }, [])
@@ -30,7 +38,9 @@ export default function App() {
     const slug = route.replace('/blog/', '')
     page = <BlogPost slug={slug} navigate={navigate} />
   } else if (route === '/blog') {
-    page = <Blog navigate={navigate} />
+    page = <Blog />
+  } else if (route === '/credits') {
+    page = <Credits />
   } else {
     page = <Home />
   }
@@ -42,7 +52,20 @@ export default function App() {
         {page}
         <hr className="separator" />
         <footer>
-          xmzr.dev · {new Date().getFullYear()}
+          <a
+            href="#/credits"
+            className="footer-link"
+          >
+            xmzr.dev · {new Date().getFullYear()}
+          </a>
+          <span className="footer-sep">/</span>
+          <a
+            href="#/credits"
+            className="footer-link"
+            style={{ fontSize: 11 }}
+          >
+            {t('footer.credits')}
+          </a>
         </footer>
       </div>
     </>
