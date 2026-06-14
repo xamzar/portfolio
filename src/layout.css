@@ -67,6 +67,7 @@ nav .container {
 
 @media (max-width: 600px) {
   .nav-links { gap: 0.75rem; font-size: 11px; }
+  .lang-selector { margin-left: 0.5rem; font-size: 11px; }
 }
 
 /* Section spacing */
