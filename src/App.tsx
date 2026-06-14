@@ -54,7 +54,7 @@ export default function App() {
 
   return (
     <>
-      <Nav route={route} navigate={navigate} />
+      <Nav navigate={navigate} />
       <div className="container">
         {page}
         <hr className="separator" />

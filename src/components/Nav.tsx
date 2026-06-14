@@ -2,7 +2,6 @@ import { useLanguage } from '../i18n/context'
 import LangSelector from './LangSelector'
 
 interface NavProps {
-  route: string
   navigate: (path: string) => void
 }
 

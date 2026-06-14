@@ -4,11 +4,8 @@
     "nativeName": "中文"
   },
   "nav": {
-    "about": "/关于",
     "projects": "/项目",
-    "blog": "/博客",
-    "contact": "/联系",
-    "home": "/首页"
+    "blog": "/博客"
   },
   "hero": {
     "name": "Rauan Khamza",

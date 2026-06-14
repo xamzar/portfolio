@@ -4,11 +4,8 @@
     "nativeName": "EN"
   },
   "nav": {
-    "about": "/about",
     "projects": "/projects",
-    "blog": "/blog",
-    "contact": "/contact",
-    "home": "/home"
+    "blog": "/blog"
   },
   "hero": {
     "name": "Rauan Khamza",
