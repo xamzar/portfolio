@@ -128,7 +128,14 @@ nav .container {
 }
 
 .hero .links a {
-  font-size: 13px;
+  display: flex;
+  align-items: center;
+  color: var(--text-secondary);
+  transition: color 0.2s;
+}
+
+.hero .links a:hover {
+  color: var(--accent-primary);
 }
 
 /* Sections */
