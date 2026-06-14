@@ -82,7 +82,12 @@
 }
 
 .project a {
-  font-size: 12px;
+  color: var(--text-primary);
+  transition: color 0.2s;
+}
+
+.project a:hover {
+  color: var(--accent-primary);
 }
 
 /* Education */
@@ -106,13 +111,6 @@
 .edu-degree {
   font-size: 12px;
   color: var(--text-secondary);
-  line-height: 1.5;
-}
-
-.edu-coursework {
-  font-size: 12px;
-  color: var(--text-secondary);
-  margin-top: 0.3rem;
   line-height: 1.5;
 }
 
