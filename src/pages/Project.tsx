@@ -2,6 +2,7 @@ import { useLanguage } from '../i18n/context'
 import Markdown from 'react-markdown'
 import remarkGfm from 'remark-gfm'
 import { getProject } from '../lib/projects'
+import { allPosts } from '../lib/posts'
 
 interface ProjectProps {
   slug: string
@@ -27,6 +28,10 @@ export default function Project({ slug, navigate }: ProjectProps) {
   }
 
   const { meta, content } = project
+
+  const posts = allPosts(language).filter(p =>
+    p.tags.some(t => t.toLowerCase() === slug.toLowerCase())
+  )
 
   return (
     <article className="project-page">
@@ -67,6 +72,31 @@ export default function Project({ slug, navigate }: ProjectProps) {
       <div className="project-content">
         <Markdown remarkPlugins={[remarkGfm]}>{content}</Markdown>
       </div>
+
+      {posts.length > 0 && (
+        <>
+          <hr className="separator" />
+          <h2 className="section-title">// related posts</h2>
+          {posts.map(p => (
+            <div key={p.slug} className="post-card">
+              <h3>
+                <a href={`#/blog/${p.slug}`}>{p.title}</a>
+              </h3>
+              <div className="post-meta">
+                {p.date}
+                {p.tags.length > 0 && (
+                  <> · <span className="post-tags">
+                    {p.tags.map(t => (
+                      <span key={t} className="post-tag">{t}</span>
+                    ))}
+                  </span></>
+                )}
+              </div>
+              <p className="post-excerpt">{p.excerpt}</p>
+            </div>
+          ))}
+        </>
+      )}
     </article>
   )
 }

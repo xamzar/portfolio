@@ -48,6 +48,12 @@
     "notFoundBody": "文章未找到。",
     "back": "← 返回博客"
   },
+  "projects": {
+    "searchPlaceholder": "搜索项目...",
+    "noMatches": "未找到匹配的项目。",
+    "viewAll": "查看全部项目 →",
+    "empty": "暂无项目。"
+  },
   "contact": {
     "availability": "香港 (UTC+8) · 欢迎合作与研究"
   },

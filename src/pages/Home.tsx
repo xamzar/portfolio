@@ -67,7 +67,7 @@ export default function Home() {
 
       <section id="projects">
         <h2 className="section-title">{t('section.projects')}</h2>
-        {projects.map(p => (
+        {projects.slice(0, 3).map(p => (
           <div key={p.slug} className="project">
             <h3>
               <a href={`#/projects/${p.slug}`}>{p.title}</a>
@@ -83,6 +83,11 @@ export default function Home() {
             <p>{p.desc}</p>
           </div>
         ))}
+        {projects.length > 3 && (
+          <a href="#/projects" className="view-all">
+            {t('projects.viewAll')}
+          </a>
+        )}
       </section>
 
       <hr className="separator" />

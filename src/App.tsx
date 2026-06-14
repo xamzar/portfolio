@@ -4,6 +4,7 @@ import Nav from './components/Nav'
 import Home from './pages/Home'
 import Blog from './pages/Blog'
 import BlogPost from './pages/BlogPost'
+import Projects from './pages/Projects'
 import Project from './pages/Project'
 import Credits from './pages/Credits'
 
@@ -43,6 +44,8 @@ export default function App() {
     page = <Project slug={slug} navigate={navigate} />
   } else if (route === '/blog') {
     page = <Blog />
+  } else if (route === '/projects') {
+    page = <Projects />
   } else if (route === '/credits') {
     page = <Credits />
   } else {

@@ -48,6 +48,12 @@
     "notFoundBody": "Post not found.",
     "back": "← Back to blog"
   },
+  "projects": {
+    "searchPlaceholder": "search projects...",
+    "noMatches": "No projects match your search.",
+    "viewAll": "View all projects →",
+    "empty": "No projects yet — coming soon."
+  },
   "contact": {
     "availability": "HK (UTC+8) · open for collab & research"
   },
