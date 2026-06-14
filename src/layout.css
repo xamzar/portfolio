@@ -67,10 +67,9 @@ nav .container {
 
 @media (max-width: 600px) {
   .nav-links {
-    flex-wrap: wrap;
-    justify-content: center;
-    max-width: 180px;
-    gap: 0.5rem 1rem;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 0.25rem 1rem;
     font-size: 11px;
   }
   .lang-selector { margin-left: 0.75rem; font-size: 11px; }
