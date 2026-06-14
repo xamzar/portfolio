@@ -368,7 +368,6 @@
   font-size: inherit;
   cursor: pointer;
   padding: 0;
-  white-space: nowrap;
   transition: color 0.2s;
 }
 

@@ -37,7 +37,6 @@ nav .container {
   display: flex;
   justify-content: flex-start;
   align-items: center;
-  flex-wrap: wrap;
   padding-top: 0.75rem;
   padding-bottom: 0.75rem;
   font-size: 13px;
@@ -69,15 +68,13 @@ nav .container {
 
 @media (max-width: 600px) {
   .nav-links {
-    width: 100%;
-    justify-content: center;
-    order: 1;
-    margin-top: 0.5rem;
-    margin-left: 0;
-    gap: 1rem;
+    flex-wrap: wrap;
+    justify-content: flex-end;
+    max-width: 180px;
+    gap: 0.5rem 1rem;
     font-size: 11px;
   }
-  .lang-selector { margin-left: auto; font-size: 11px; }
+  .lang-selector { margin-left: 0.75rem; font-size: 11px; }
 }
 
 /* Section spacing */
