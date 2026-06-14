@@ -110,10 +110,10 @@
 }
 
 .edu-coursework {
-  font-size: 11px;
-  color: var(--accent-primary);
+  font-size: 12px;
+  color: var(--text-secondary);
   margin-top: 0.3rem;
-  opacity: 0.8;
+  line-height: 1.5;
 }
 
 .edu-meta {
