@@ -1,5 +1,5 @@
 import { useState, useEffect } from 'react'
-import { useLanguage } from './i18n/context'
+import { useLanguage } from './i18n/useLanguage'
 import Nav from './components/Nav'
 import Home from './pages/Home'
 import Blog from './pages/Blog'
@@ -29,19 +29,15 @@ export default function App() {
     return () => window.removeEventListener('hashchange', onHashChange)
   }, [])
 
-  const navigate = (path: string) => {
-    window.location.hash = path
-  }
-
   let page
   if (route === '/') {
     page = <Home />
   } else if (route.startsWith('/blog/')) {
     const slug = route.replace('/blog/', '')
-    page = <BlogPost slug={slug} navigate={navigate} />
+    page = <BlogPost slug={slug} />
   } else if (route.startsWith('/projects/')) {
     const slug = route.replace('/projects/', '')
-    page = <Project slug={slug} navigate={navigate} />
+    page = <Project slug={slug} />
   } else if (route === '/blog') {
     page = <Blog />
   } else if (route === '/projects') {
@@ -54,23 +50,17 @@ export default function App() {
 
   return (
     <>
-      <Nav navigate={navigate} />
-      <div className="container">
+      <a href="#main" className="skip-link">Skip to content</a>
+      <Nav />
+      <div className="container" id="main">
         {page}
         <hr className="separator" />
         <footer>
-          <a
-            href="#/credits"
-            className="footer-link"
-          >
+          <a href="#/credits" className="footer-link">
             xmzr.dev · {new Date().getFullYear()}
           </a>
           <span className="footer-sep">/</span>
-          <a
-            href="#/credits"
-            className="footer-link"
-            style={{ fontSize: 11 }}
-          >
+          <a href="#/credits" className="footer-link" style={{ fontSize: 11 }}>
             {t('footer.credits')}
           </a>
         </footer>

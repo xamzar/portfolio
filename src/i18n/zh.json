@@ -4,12 +4,15 @@
     "nativeName": "中文"
   },
   "nav": {
+    "about": "/关于",
+    "education": "/教育",
     "projects": "/项目",
-    "blog": "/博客"
+    "blog": "/博客",
+    "contact": "/联系"
   },
   "hero": {
     "name": "Rauan Khamza",
-    "tagline": "CS @ CityU HK · 做些东西",
+    "tagline": "CS @ CityU HK · 共创未来",
     "bio": "计算机科学大二学生。从事AI融合教育研究和Web开发。"
   },
   "section": {
@@ -49,7 +52,11 @@
     "searchPlaceholder": "搜索项目...",
     "noMatches": "未找到匹配的项目。",
     "viewAll": "查看全部项目 →",
-    "empty": "暂无项目。"
+    "empty": "暂无项目。",
+    "notFound": "// 未找到",
+    "notFoundBody": "项目未找到。",
+    "backHome": "返回首页",
+    "relatedPosts": "// 相关文章"
   },
   "contact": {
     "availability": "香港 (UTC+8) · 欢迎合作与研究"

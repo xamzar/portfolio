@@ -20,13 +20,17 @@ export default function PostCard({ post, onTagClick }: PostCardProps) {
             {' · '}
             <span className="post-tags">
               {post.tags.map(t => (
-                <span
-                  key={t}
-                  className={`post-tag${onTagClick ? ' post-tag--clickable' : ''}`}
-                  onClick={onTagClick ? (e) => { e.stopPropagation(); onTagClick(t) } : undefined}
-                >
-                  {t}
-                </span>
+                onTagClick ? (
+                  <button
+                    key={t}
+                    className="post-tag post-tag--clickable"
+                    onClick={(e) => { e.stopPropagation(); onTagClick(t) }}
+                  >
+                    {t}
+                  </button>
+                ) : (
+                  <span key={t} className="post-tag">{t}</span>
+                )
               ))}
             </span>
           </>

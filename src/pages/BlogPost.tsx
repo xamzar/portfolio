@@ -1,14 +1,13 @@
-import { useLanguage } from '../i18n/context'
+import { useLanguage } from '../i18n/useLanguage'
 import Markdown from 'react-markdown'
 import remarkGfm from 'remark-gfm'
 import { getPost } from '../lib/posts'
 
 interface BlogPostProps {
   slug: string
-  navigate: (path: string) => void
 }
 
-export default function BlogPost({ slug, navigate }: BlogPostProps) {
+export default function BlogPost({ slug }: BlogPostProps) {
   const { t, language } = useLanguage()
   const post = getPost(slug, language)
 
@@ -18,10 +17,7 @@ export default function BlogPost({ slug, navigate }: BlogPostProps) {
         <h2 className="section-title">{t('blog.notFound')}</h2>
         <p className="empty-state">
           {t('blog.notFoundBody')}{' '}
-          <a
-            href="#/blog"
-            onClick={(e) => { e.preventDefault(); navigate('/blog') }}
-          >
+          <a href="#/blog">
             {t('blog.back')}
           </a>
         </p>
@@ -31,16 +27,13 @@ export default function BlogPost({ slug, navigate }: BlogPostProps) {
 
   return (
     <article className="blog-page">
-      <a
-        href="#/blog"
-        className="back-link"
-      >
+      <a href="#/blog" className="back-link">
         {t('blog.back')}
       </a>
 
       <h1>{post.meta.title}</h1>
 
-      <div className="post-meta" style={{ marginBottom: '2rem' }}>
+      <div className="blog-post-meta">
         {post.meta.date} ·{' '}
         <span className="post-tags">
           {post.meta.tags.map((t: string) => (

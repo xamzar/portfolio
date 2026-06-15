@@ -1,4 +1,4 @@
-import { useLanguage } from '../i18n/context'
+import { useLanguage } from '../i18n/useLanguage'
 import PostCard from '../components/PostCard'
 import { allPosts } from '../lib/posts'
 

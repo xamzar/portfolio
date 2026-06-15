@@ -1,7 +1,8 @@
 import { useState } from 'react'
-import { useLanguage } from '../i18n/context'
+import { useLanguage } from '../i18n/useLanguage'
 import PostCard from '../components/PostCard'
 import { allPosts, allTags } from '../lib/posts'
+import { filterItems } from '../lib/filter'
 
 export default function Blog() {
   const { t, language } = useLanguage()
@@ -10,15 +11,7 @@ export default function Blog() {
 
   const posts = allPosts(language)
   const tags = allTags()
-
-  const filtered = posts.filter(p => {
-    if (activeTag && !p.tags.includes(activeTag)) return false
-    if (search) {
-      const q = search.toLowerCase()
-      if (!p.title.toLowerCase().includes(q) && !p.excerpt.toLowerCase().includes(q)) return false
-    }
-    return true
-  })
+  const filtered = filterItems(posts, search, ['title', 'excerpt'], activeTag, 'tags')
 
   return (
     <section className="blog-page">
@@ -34,13 +27,14 @@ export default function Blog() {
 
       <div className="tag-pills">
         {tags.map(tag => (
-          <span
+          <button
             key={tag}
             className={`tag-pill${activeTag === tag ? ' active' : ''}`}
             onClick={() => setActiveTag(activeTag === tag ? null : tag)}
+            aria-pressed={activeTag === tag}
           >
             #{tag}
-          </span>
+          </button>
         ))}
       </div>
 

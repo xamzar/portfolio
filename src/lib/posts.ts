@@ -1,4 +1,5 @@
-import { parseFrontmatter } from './frontmatter'
+import { getString, getStrings } from './frontmatter'
+import { groupBySlug, resolveEntry, parseFrontmatter } from './content'
 
 export type PostMeta = {
   slug: string
@@ -14,34 +15,15 @@ const modules = import.meta.glob('../content/blog/*.md', {
   import: 'default',
 }) as Record<string, string>
 
-/** Grouped by slug — each slug has entries per language */
-type PostEntry = {
-  slug: string
-  lang: string
-  raw: string
-}
-
-const postsBySlug: Record<string, PostEntry[]> = {}
-
-for (const [path, raw] of Object.entries(modules)) {
-  const filename = path.split('/').pop()!
-  // hello-world.md → slug: hello-world, lang: en
-  // hello-world.kk.md → slug: hello-world, lang: kk
-  const match = filename.match(/^(.+?)(?:\.([a-z]{2}))?\.md$/)
-  if (!match) continue
-  const slug = match[1]
-  const lang = match[2] || 'en'
-  if (!postsBySlug[slug]) postsBySlug[slug] = []
-  postsBySlug[slug].push({ slug, lang, raw: raw as string })
-}
+const postsBySlug = groupBySlug(modules)
 
 function parseMeta(raw: string) {
   const { data } = parseFrontmatter(raw)
   return {
-    title: data.title || '',
-    date: data.date || '',
-    tags: (data.tags || []) as string[],
-    excerpt: data.excerpt || '',
+    title: getString(data, 'title'),
+    date: getString(data, 'date'),
+    tags: getStrings(data, 'tags'),
+    excerpt: getString(data, 'excerpt'),
   }
 }
 
@@ -49,10 +31,7 @@ function parseMeta(raw: string) {
 export function allPosts(lang: string = 'en'): PostMeta[] {
   return Object.values(postsBySlug)
     .map(entries => {
-      const entry =
-        entries.find(e => e.lang === lang) ||
-        entries.find(e => e.lang === 'en') ||
-        entries[0]
+      const entry = resolveEntry(entries, lang)
       const meta = parseMeta(entry.raw)
       return { slug: entry.slug, ...meta }
     })
@@ -78,18 +57,15 @@ export function getPost(
 ): { meta: PostMeta; content: string } | null {
   const entries = postsBySlug[slug]
   if (!entries) return null
-  const entry =
-    entries.find(e => e.lang === lang) ||
-    entries.find(e => e.lang === 'en') ||
-    entries[0]
+  const entry = resolveEntry(entries, lang)
   const { data, content } = parseFrontmatter(entry.raw)
   return {
     meta: {
       slug: entry.slug,
-      title: data.title || '',
-      date: data.date || '',
-      tags: (data.tags || []) as string[],
-      excerpt: data.excerpt || '',
+      title: getString(data, 'title'),
+      date: getString(data, 'date'),
+      tags: getStrings(data, 'tags'),
+      excerpt: getString(data, 'excerpt'),
     },
     content,
   }

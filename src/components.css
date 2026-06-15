@@ -208,8 +208,10 @@
 .tag-pill {
   display: inline-block;
   padding: 0.2rem 0.6rem;
+  font-family: var(--font-mono);
   font-size: 11px;
   border: 1px solid #444;
+  background: none;
   color: var(--text-secondary);
   cursor: pointer;
   transition: all 0.2s;
@@ -257,6 +259,7 @@
 }
 
 .post-tag {
+  font-family: var(--font-mono);
   font-size: 10px;
   color: var(--accent-primary);
   opacity: 0.8;
@@ -271,7 +274,14 @@
 }
 
 .post-tag--clickable {
+  background: none;
+  border: none;
+  font-family: var(--font-mono);
   cursor: pointer;
+}
+
+.post-tag--clickable:hover {
+  opacity: 1;
 }
 
 /* Post card (preview) */
@@ -298,6 +308,13 @@
   margin-bottom: 0.3rem;
 }
 
+/* Blog post detail meta — larger bottom margin */
+.blog-post-meta {
+  font-size: 11px;
+  color: var(--text-secondary);
+  margin-bottom: 2rem;
+}
+
 .post-excerpt {
   font-size: 13px;
   color: var(--text-secondary);
@@ -307,6 +324,20 @@
 .empty-state {
   color: var(--text-secondary);
   font-size: 13px;
+}
+
+/* About body text — same visual as empty-state but semantically distinct */
+.about-text {
+  color: var(--text-secondary);
+  font-size: 13px;
+  margin-bottom: 1.5rem;
+}
+
+/* Contact note below social links */
+.contact-note {
+  color: var(--text-secondary);
+  font-size: 13px;
+  margin-top: 0.75rem;
 }
 
 /* View all link */
@@ -329,6 +360,10 @@
 }
 
 /* Credits page */
+.credits-section {
+  padding: 4rem 0;
+}
+
 .credits-body {
   margin-bottom: 2rem;
 }
@@ -354,7 +389,6 @@
 /* Language selector — custom terminal dropdown */
 .lang-selector {
   position: relative;
-  margin-left: 1rem;
   font-family: var(--font-mono);
   font-size: 12px;
   color: var(--text-secondary);
@@ -368,6 +402,7 @@
   font-size: inherit;
   cursor: pointer;
   padding: 0;
+  white-space: nowrap;
   transition: color 0.2s;
 }
 

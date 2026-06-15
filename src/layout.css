@@ -42,10 +42,23 @@ nav .container {
   font-size: 13px;
 }
 
-.nav-links {
-  display: flex;
-  gap: 1.5rem;
-  list-style: none;
+/* Skip-to-content — visually hidden, visible on focus */
+.skip-link {
+  position: absolute;
+  top: -100px;
+  left: 0;
+  background: var(--bg-secondary);
+  color: var(--accent-primary);
+  padding: 0.5rem 1rem;
+  z-index: 300;
+  font-family: var(--font-mono);
+  font-size: 13px;
+  border: 1px solid var(--accent-primary);
+  transition: top 0.15s;
+}
+
+.skip-link:focus {
+  top: 0;
 }
 
 .logo {
@@ -53,6 +66,12 @@ nav .container {
   font-size: 13px;
   display: flex;
   align-items: center;
+}
+
+.nav-links {
+  display: flex;
+  gap: 1.5rem;
+  list-style: none;
 }
 
 .nav-links a {
@@ -65,13 +84,10 @@ nav .container {
   color: var(--accent-primary);
 }
 
-@media (max-width: 600px) {
-  .nav-links { gap: 0.75rem; font-size: 11px; }
-}
-
 /* Section spacing */
 section {
   padding: 2rem 0;
+  scroll-margin-top: 3rem;
 }
 
 /* Footer */
@@ -101,4 +117,6 @@ footer {
 @media (max-width: 600px) {
   .hero h1 { font-size: 1.5rem; }
   .hero { padding: 4rem 0 2rem; }
+  .nav-links { gap: 0.75rem; font-size: 12px; }
+  nav .container { padding: 0.6rem 0.75rem; }
 }

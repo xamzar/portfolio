@@ -4,8 +4,11 @@
     "nativeName": "EN"
   },
   "nav": {
+    "about": "/about",
+    "education": "/education",
     "projects": "/projects",
-    "blog": "/blog"
+    "blog": "/blog",
+    "contact": "/contact"
   },
   "hero": {
     "name": "Rauan Khamza",
@@ -49,7 +52,11 @@
     "searchPlaceholder": "search projects...",
     "noMatches": "No projects match your search.",
     "viewAll": "View all projects →",
-    "empty": "No projects yet — coming soon."
+    "empty": "No projects yet — coming soon.",
+    "notFound": "// not found",
+    "notFoundBody": "Project not found.",
+    "backHome": "Back home",
+    "relatedPosts": "// related posts"
   },
   "contact": {
     "availability": "HK (UTC+8) · open for collab & research"

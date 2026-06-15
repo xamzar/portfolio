@@ -1,22 +1,8 @@
-import {
-  createContext,
-  useContext,
-  useState,
-  type ReactNode,
-} from 'react'
+import { useState, type ReactNode } from 'react'
 import { languages, translations, resolveString } from './index'
-import type { LanguageInfo } from './index'
+import { LanguageContext } from './language-context'
 
 const STORAGE_KEY = 'xmzr-lang'
-
-type LanguageContextValue = {
-  language: string
-  setLanguage: (code: string) => void
-  t: (key: string) => string
-  languages: LanguageInfo[]
-}
-
-const LanguageContext = createContext<LanguageContextValue | null>(null)
 
 function getInitialLanguage(): string {
   const saved = localStorage.getItem(STORAGE_KEY)
@@ -61,10 +47,4 @@ export function LanguageProvider({ children }: { children: ReactNode }) {
       {children}
     </LanguageContext.Provider>
   )
-}
-
-export function useLanguage(): LanguageContextValue {
-  const ctx = useContext(LanguageContext)
-  if (!ctx) throw new Error('useLanguage must be used within LanguageProvider')
-  return ctx
 }

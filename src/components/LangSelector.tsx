@@ -1,5 +1,5 @@
 import { useState, useRef, useEffect } from 'react'
-import { useLanguage } from '../i18n/context'
+import { useLanguage } from '../i18n/useLanguage'
 
 export default function LangSelector() {
   const { language, setLanguage, languages } = useLanguage()
