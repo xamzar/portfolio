@@ -15,11 +15,11 @@ export default function Nav() {
           xmzr
         </a>
         <ul className="nav-links">
-          <li><a href="#about">{t('nav.about')}</a></li>
-          <li><a href="#education">{t('nav.education')}</a></li>
-          <li><a href="#projects">{t('nav.projects')}</a></li>
-          <li><a href="#blog">{t('nav.blog')}</a></li>
-          <li><a href="#contact">{t('nav.contact')}</a></li>
+          <li className="nav-section-link"><a href="#about">{t('nav.about')}</a></li>
+          <li className="nav-section-link"><a href="#education">{t('nav.education')}</a></li>
+          <li><a href="#/projects">{t('nav.projects')}</a></li>
+          <li><a href="#/blog">{t('nav.blog')}</a></li>
+          <li className="nav-section-link"><a href="#contact">{t('nav.contact')}</a></li>
         </ul>
         <LangSelector />
       </div>
